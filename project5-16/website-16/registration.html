@@ -1,0 +1,49 @@
+<html>
+</head>
+<title>Registration</title>
+<style>
+
+    body{
+        background-image:url(im.jpg);
+    }
+    div{ background-color:aliceblue;
+        width:300px;
+        padding:50px;
+    }
+    @media screen and (min-width:550px){
+        body{
+            background-image:url(image.jpg);
+            font-size:20px;
+            padding:15px;
+        }
+        @media screen and (min-width:750px){
+            body{
+                background-image:url(i.jpg);
+                font-size:25px;
+            }
+        }
+    }
+</style>
+<head>
+<body>
+    
+    <center>
+        <div>
+        <h1>Welcome To Registration Page</h1>
+        <form action="Registration.html">
+            FirstName:<input type="text" name="Fname" font-color="white" placeholder="firstname"><br><br>
+            LastName:<input  type="text" name="Lname" placeholder="lastname"><br><br>
+            RollNumber:<input type="text" name="rno" placeholder="rollnumber"><br><br>
+            Password:<input type="password" name="pswrd" placeholder="password"><br><br>
+            Email:<input type="text" name="mail" placeholder="email"><br><br>
+            PhoneNumber:<input type="text" name="phno" maxlength="10" placeholder="phnumber"><br>
+            Gender:<input type="radio"name="M">Male <input type="radio" name="F" placeholder="gender">Female<br><br>
+            Date Of Birth:<input type="date" name="dob" placeholder="dob"/><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+
+        </form>
+        </div>
+    </center>
+</body>
+</html>

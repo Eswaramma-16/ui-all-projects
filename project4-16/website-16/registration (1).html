@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url(pa.jpg);
+        }
+
+        @media screen and (min-width: 550px) {
+            body {
+                background-image: url(pace.jpg);
+                font-size: 20px;
+                padding: 15px;
+            }
+        }
+
+        @media screen and (min-width: 750px) {
+            body {
+                background-image: url(pace.jpg);
+                font-size: 25px;
+                color:white;
+            }
+        }
+    </style>
+    <script>
+        function validation() {
+            let checkedButton = false;
+
+            if (isEmpty(document.getElementById('data_1').value.trim())) {
+                alert('First name is required!');
+                return false;
+            }
+
+            if (isEmpty(document.getElementById('data_2').value.trim())) {
+                alert('Last name is required!');
+                return false;
+            }
+
+            if (isEmpty(document.getElementById('data_5').value.trim())) {
+                alert('PH number is required!');
+                return false;
+            }
+
+            if (isEmpty(document.getElementById('data_4').value.trim())) {
+                alert('Email is required!');
+                return false;
+            }
+
+            if (!validateEmail(document.getElementById('data_4').value.trim())) {
+                alert('Email must be a valid email address!');
+                return false;
+            }
+
+            const radioButtons = document.getElementsByName('gender');
+            for (let i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    checkedButton = true;
+                    break;
+                }
+            }
+
+            if (!checkedButton) {
+                alert("Please select a gender.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function isEmpty(str) {
+            return (str.length === 0 || !str.trim());
+        }
+
+        function validateEmail(email) {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+            return isEmpty(email) || re.test(email);
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="successful.html" onSubmit="return validation();" class="container mt-5">
+        <h1 class="text-center mb-4">Welcome to registration page</h1>
+        <div class="form-group">
+            <label for="data_1">First Name:</label>
+            <input type="text" class="form-control" id="data_1" name="data_1" placeholder="First Name" color="white">
+        </div>
+        <div class="form-group">
+            <label for="data_2">Last Name:</label>
+            <input type="text" class="form-control" id="data_2" name="data_2" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+            <label for="data_4">Email:</label>
+            <input type="email" class="form-control" id="data_4" name="data_4" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="data_5">Phone Number:</label>
+            <input type="tel" class="form-control" id="data_5" name="data_5" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="data_6">Roll Number:</label>
+            <input type="text" class="form-control" id="data_6" name="data_6" placeholder="Roll Number">
+        </div>
+        <div class="form-group">
+            <label for="data_7">Password:</label>
+            <input type="password" class="form-control" id="data_7" name="data_7" placeholder="Password">
+        </div>
+        
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+    </form>
+
+    <!-- Bootstrap JS and jQuery (optional, if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

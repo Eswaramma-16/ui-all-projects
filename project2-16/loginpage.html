@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <style>
+        body{
+            background-image:url(image.jpg);
+            font-style:italic;
+        }
+        div{
+            background-color:aliceblue;
+            width:300px;
+            padding:20px;
+        }
+    </style>
+    <script>
+        // User Validations
+function loginValidation() {
+            // Ramesh
+  var uname = document.myform.username.value;
+             //Ramesh@123
+  var password = document.myform.password.value;
+            if(uname==null || uname=="") {
+              alert("Name cant be blank")
+              return false;  
+           } else if (password.length<6){
+              alert("Password Must be 6 letters")
+              return false;
+           } 
+           else{
+           return true;  
+           }           
+        }           
+     </script>
+</head>
+<body>
+    <a href="Contactus.html">Login</a><br>
+    <center>
+        <div>
+        <form action="loginpage.html">
+        <h3> WELCOME to Login Page</h3>
+        USERNAME: <input type="text" name="User"placeholder="username"><br><br>
+        PASSWORD: <input type="password" name="pswrd" placeholder="password"><br><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    </center>
+</body>
+</html>
+
+
